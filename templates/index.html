@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Toy application demoing useful tech.">
+    <meta name="author" content="@gotoariel">
+    <!-- <link rel="icon" href="favicon.ico"> -->
+
+    <title>Barge Displacement Calculator</title>
+    <!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS for navbar-->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+		  <li class="nav-item active">
+			<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="https://github.com/sinaamini11/barge_app" target="_blank">Github</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+	<br>
+<div class="col-lg-12 text-left">
+<h1>Barge Displacement Calculator Web App</h1>
+
+<hr>
+
+<form id='input' method='post' action='index'>
+<div class=WordSection1>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt;mso-border-insideh:none;mso-border-insidev:none'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:25.3pt'>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Barge Name<o:p></o:p></b></p>
+  </td>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Material<o:p></o:p></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:25.3pt'>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>
+										<select id="barge_name" name="barge_name">
+										<option value="IN 005429">IN 005429</option>
+										<option value="IN 015423">IN 015423</option>
+										<option value="IN 968504">IN 968504</option>
+										<option value="IN 978507">IN 978507</option>
+										<option value="ING 1917">ING 1917</option>
+										<option value="ING 1959">ING 1959</option>
+										<option value="ING 1962">ING 1962</option>
+										<option value="ING 1984">ING 1984</option>
+										<option value="ING 2000">ING 2000</option>
+										<option value="ING 2008">ING 2008</option>
+										<option value="ING 2008">ING 2008</option>
+										<option value="ING 2040">ING 2040</option>
+										<option value="ING 2047">ING 2047</option>
+										<option value="ING 2060">ING 2060</option>
+										<option value="ING 2074">ING 2074</option>
+										<option value="ING 2080">ING 2080</option>
+										<option value="ING 2088">ING 2088</option>
+										<option value="ING 2091">ING 2091</option>
+										<option value="ING 2170">ING 2170</option>
+										<option value="ING 2201">ING 2201</option>
+										<option value="ING 2204">ING 2204</option>
+										<option value="ING 2212">ING 2212</option>
+										<option value="ING 2238">ING 2238</option>
+										<option value="ING 2256">ING 2256</option>
+										<option value="ING 2289">ING 2289</option>
+										<option value="ING 2336">ING 2336</option>
+										<option value="ING 2413">ING 2413</option>
+										<option value="ING 2417">ING 2417</option>
+										<option value="ING 5746">ING 5746</option>
+										<option value="ING 7563">ING 7563</option>
+										<option value="OR 5317">OR 5317</option>
+										<option value="OR 5332">OR 5332</option>
+										<option value="OR 5347">OR 5347</option>
+										<option value="T 13597">T 13597</option>
+										<option value="T 13602">T 13602</option>
+										<option value="ZT 302">ZT 302</option>
+										</select>  
+									</p>
+  </td>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>
+										<select id="material" name="material">
+										<option value="unspecified">Not Specified</option>
+										<option value="armor">Armor Stone</option>
+										<option value="bedding">Bedding Stone</option>
+										</select>
+													</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:25.3pt'>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Corner 1 Loaded<o:p></o:p></b></p>
+  </td>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Corner 1 Unloaded</b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:25.3pt'>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>
+  				<label for="loaded_ft1">ft</label>
+				<select id="loaded_ft1" name="loaded_ft1">
+				<option value="0">0'</option>
+				<option value="1">1'</option>
+				<option value="2">2'</option>
+				<option value="3">3'</option>
+				<option value="4">4'</option>
+				<option value="5">5'</option>
+				<option value="6">6'</option>
+				<option value="7">7'</option>
+				<option value="8">8'</option>
+				<option value="9">9'</option>
+				<option value="10">10'</option>
+				<option value="11">11'</option>
+				<option value="12">12'</option>
+				<option value="13">13'</option>
+				<option value="14">14'</option>
+				<option value="15">15'</option>
+				</select>
+  </p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>
+  				<label for="loaded_in1">in</label>
+				<select id="loaded_in1" name="loaded_in1">
+				<option value="0">0"</option>
+				<option value="1">1"</option>
+				<option value="2">2"</option>
+				<option value="3">3"</option>
+				<option value="4">4"</option>
+				<option value="5">5"</option>
+				<option value="6">6"</option>
+				<option value="7">7"</option>
+				<option value="8">8"</option>
+				<option value="9">9"</option>
+				<option value="10">10"</option>
+				<option value="11">11"</option>
+				</select>
+  
+  </p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'> <label for="unloaded_ft1">ft</label>
+										<select id="unloaded_ft1" name="unloaded_ft1">
+										<option value="0">0'</option>
+										<option value="1">1'</option>
+										<option value="2">2'</option>
+										<option value="3">3'</option>
+										<option value="4">4'</option>
+										<option value="5">5'</option>
+										<option value="6">6'</option>
+										<option value="7">7'</option>
+										<option value="8">8'</option>
+										<option value="9">9'</option>
+										<option value="10">10'</option>
+										<option value="11">11'</option>
+										<option value="12">12'</option>
+										<option value="13">13'</option>
+										<option value="14">14'</option>
+										<option value="15">15'</option>
+										</select></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>
+    			<label for="unloaded_in1">in</label>
+				<select id="unloaded_in1" name="unloaded_in1">
+				<option value="0">0"</option>
+				<option value="1">1"</option>
+				<option value="2">2"</option>
+				<option value="3">3"</option>
+				<option value="4">4"</option>
+				<option value="5">5"</option>
+				<option value="6">6"</option>
+				<option value="7">7"</option>
+				<option value="8">8"</option>
+				<option value="9">9"</option>
+				<option value="10">10"</option>
+				<option value="11">11"</option>
+				</select>
+  </p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:26.5pt'>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:26.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Corner 2 Loaded</b></p>
+  </td>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:26.5pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Corner 2 Unloaded</b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:25.3pt'>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="loaded_ft2">ft</label>
+										<select id="loaded_ft2" name="loaded_ft2">
+										<option value="0">0'</option>
+										<option value="1">1'</option>
+										<option value="2">2'</option>
+										<option value="3">3'</option>
+										<option value="4">4'</option>
+										<option value="5">5'</option>
+										<option value="6">6'</option>
+										<option value="7">7'</option>
+										<option value="8">8'</option>
+										<option value="9">9'</option>
+										<option value="10">10'</option>
+										<option value="11">11'</option>
+										<option value="12">12'</option>
+										<option value="13">13'</option>
+										<option value="14">14'</option>
+										<option value="15">15'</option>
+										</select></p>
+  </td></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="loaded_in2">in</label>
+										<select id="loaded_in2" name="loaded_in2">
+										<option value="0">0"</option>
+										<option value="1">1"</option>
+										<option value="2">2"</option>
+										<option value="3">3"</option>
+										<option value="4">4"</option>
+										<option value="5">5"</option>
+										<option value="6">6"</option>
+										<option value="7">7"</option>
+										<option value="8">8"</option>
+										<option value="9">9"</option>
+										<option value="10">10"</option>
+										<option value="11">11"</option>
+										</select></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="unloaded_ft2">ft</label>
+										<select id="unloaded_ft2" name="unloaded_ft2">
+										<option value="0">0'</option>
+										<option value="1">1'</option>
+										<option value="2">2'</option>
+										<option value="3">3'</option>
+										<option value="4">4'</option>
+										<option value="5">5'</option>
+										<option value="6">6'</option>
+										<option value="7">7'</option>
+										<option value="8">8'</option>
+										<option value="9">9'</option>
+										<option value="10">10'</option>
+										<option value="11">11'</option>
+										<option value="12">12'</option>
+										<option value="13">13'</option>
+										<option value="14">14'</option>
+										<option value="15">15'</option>
+										</select></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="unloaded_in2">in</label>
+										<select id="unloaded_in2" name="unloaded_in2">
+										<option value="0">0"</option>
+										<option value="1">1"</option>
+										<option value="2">2"</option>
+										<option value="3">3"</option>
+										<option value="4">4"</option>
+										<option value="5">5"</option>
+										<option value="6">6"</option>
+										<option value="7">7"</option>
+										<option value="8">8"</option>
+										<option value="9">9"</option>
+										<option value="10">10"</option>
+										<option value="11">11"</option>
+										</select></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;height:25.3pt'>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Corner 3 Loaded</b></p>
+  </td>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Corner 3 Unloaded</b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7;height:25.3pt'>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="loaded_ft3">ft</label>
+										<select id="loaded_ft3" name="loaded_ft3">
+										<option value="0">0'</option>
+										<option value="1">1'</option>
+										<option value="2">2'</option>
+										<option value="3">3'</option>
+										<option value="4">4'</option>
+										<option value="5">5'</option>
+										<option value="6">6'</option>
+										<option value="7">7'</option>
+										<option value="8">8'</option>
+										<option value="9">9'</option>
+										<option value="10">10'</option>
+										<option value="11">11'</option>
+										<option value="12">12'</option>
+										<option value="13">13'</option>
+										<option value="14">14'</option>
+										<option value="15">15'</option>
+										</select></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="loaded_in3">in</label>
+										<select id="loaded_in3" name="loaded_in3">
+										<option value="0">0"</option>
+										<option value="1">1"</option>
+										<option value="2">2"</option>
+										<option value="3">3"</option>
+										<option value="4">4"</option>
+										<option value="5">5"</option>
+										<option value="6">6"</option>
+										<option value="7">7"</option>
+										<option value="8">8"</option>
+										<option value="9">9"</option>
+										<option value="10">10"</option>
+										<option value="11">11"</option>
+										</select></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="unloaded_ft3">ft</label>
+										<select id="unloaded_ft3" name="unloaded_ft3">
+										<option value="0">0'</option>
+										<option value="1">1'</option>
+										<option value="2">2'</option>
+										<option value="3">3'</option>
+										<option value="4">4'</option>
+										<option value="5">5'</option>
+										<option value="6">6'</option>
+										<option value="7">7'</option>
+										<option value="8">8'</option>
+										<option value="9">9'</option>
+										<option value="10">10'</option>
+										<option value="11">11'</option>
+										<option value="12">12'</option>
+										<option value="13">13'</option>
+										<option value="14">14'</option>
+										<option value="15">15'</option>
+										</select></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="unloaded_in3">in</label>
+										<select id="unloaded_in3" name="unloaded_in3">
+										<option value="0">0"</option>
+										<option value="1">1"</option>
+										<option value="2">2"</option>
+										<option value="3">3"</option>
+										<option value="4">4"</option>
+										<option value="5">5"</option>
+										<option value="6">6"</option>
+										<option value="7">7"</option>
+										<option value="8">8"</option>
+										<option value="9">9"</option>
+										<option value="10">10"</option>
+										<option value="11">11"</option>
+										</select></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;height:25.3pt'>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Corner 4 Loaded</b></p>
+  </td>
+  <td width=192 colspan=2 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b>Corner 4 Unloaded</b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9;mso-yfti-lastrow:yes;height:25.3pt'>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="loaded_ft4">ft</label>
+										<select id="loaded_ft4" name="loaded_ft4">
+										<option value="0">0'</option>
+										<option value="1">1'</option>
+										<option value="2">2'</option>
+										<option value="3">3'</option>
+										<option value="4">4'</option>
+										<option value="5">5'</option>
+										<option value="6">6'</option>
+										<option value="7">7'</option>
+										<option value="8">8'</option>
+										<option value="9">9'</option>
+										<option value="10">10'</option>
+										<option value="11">11'</option>
+										<option value="12">12'</option>
+										<option value="13">13'</option>
+										<option value="14">14'</option>
+										<option value="15">15'</option>
+										</select></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="loaded_in4">in</label>
+										<select id="loaded_in4" name="loaded_in4">
+										<option value="0">0"</option>
+										<option value="1">1"</option>
+										<option value="2">2"</option>
+										<option value="3">3"</option>
+										<option value="4">4"</option>
+										<option value="5">5"</option>
+										<option value="6">6"</option>
+										<option value="7">7"</option>
+										<option value="8">8"</option>
+										<option value="9">9"</option>
+										<option value="10">10"</option>
+										<option value="11">11"</option>
+										</select></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="unloaded_ft4">ft</label>
+										<select id="unloaded_ft4" name="unloaded_ft4">
+										<option value="0">0'</option>
+										<option value="1">1'</option>
+										<option value="2">2'</option>
+										<option value="3">3'</option>
+										<option value="4">4'</option>
+										<option value="5">5'</option>
+										<option value="6">6'</option>
+										<option value="7">7'</option>
+										<option value="8">8'</option>
+										<option value="9">9'</option>
+										<option value="10">10'</option>
+										<option value="11">11'</option>
+										<option value="12">12'</option>
+										<option value="13">13'</option>
+										<option value="14">14'</option>
+										<option value="15">15'</option>
+										</select></p>
+  </td>
+  <td width=96 style='width:1.0in;padding:0in 5.4pt 0in 5.4pt;height:25.3pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><label for="unloaded_in4">in</label>
+										<select id="unloaded_in4" name="unloaded_in4">
+										<option value="0">0"</option>
+										<option value="1">1"</option>
+										<option value="2">2"</option>
+										<option value="3">3"</option>
+										<option value="4">4"</option>
+										<option value="5">5"</option>
+										<option value="6">6"</option>
+										<option value="7">7"</option>
+										<option value="8">8"</option>
+										<option value="9">9"</option>
+										<option value="10">10"</option>
+										<option value="11">11"</option>
+										</select></p>
+		</td>
+		</tr>
+	</table>
+	<br/>
+<p><input type="submit" value="Submit"></p>	
+</form>
+
+<p class=MsoNormal align=center style='text-align:center'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+  </body>
+</html>
