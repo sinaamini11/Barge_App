@@ -1,12 +1,12 @@
 def plot_barge(barge, loaded_fb, unloaded_fb, material):
+    import io
+    import re
     import pandas as pd
     from scipy.interpolate import interp1d
     import numpy as np
     import matplotlib.pyplot as plt
     import matplotlib as mpl
     from matplotlib import rcParams
-    rcParams['font.family'] = 'arial'
-    rcParams['font.size'] = 8
 
     tables = pd.read_excel('tables/Ingram Barge Company Barges.xlsx')
 
@@ -38,16 +38,16 @@ def plot_barge(barge, loaded_fb, unloaded_fb, material):
 
     net_displacement = loaded_displacement - unloaded_displacement
 
-    plt.figure()
+    plt.figure(figsize=(7, 5))
     ax = plt.gca()
     plt.scatter(displacements, fb_values, ec='tab:blue', fc='None',
-                label='Table Values', s=20, zorder=100)
+                label='Table Values', s=25, zorder=100)
 
     fb = np.linspace(0, hull_depth, 100)
     disp = interp_fun(fb)
     plt.plot(disp, fb, lw=0.8, ls='--', c='tab:gray', label='Interpolation')
     plt.scatter(interp_fun(np.array([loaded_fb, unloaded_fb])),
-                        np.array([loaded_fb, unloaded_fb]), s= 12,
+                        np.array([loaded_fb, unloaded_fb]), s=18,
                         label='Measurements',
                         marker='x', zorder=200, c='tab:red')
 
@@ -66,7 +66,7 @@ def plot_barge(barge, loaded_fb, unloaded_fb, material):
     plt.annotate((f'{loaded_fb} ft\n'+
                   '{:,} tons'.format(loaded_displacement)),
                  xy=(loaded_displacement, loaded_fb),
-                 xytext=(5,-10),
+                 xytext=(5,-20),
                  textcoords=('offset pixels'),
                  ha='left', va='top', arrowprops={'arrowstyle':'-|>', 'lw':1,
                                                   'fc':'black'},
@@ -75,21 +75,24 @@ def plot_barge(barge, loaded_fb, unloaded_fb, material):
     plt.annotate((f'{unloaded_fb} ft\n'+
                   '{:,} tons'.format(unloaded_displacement)),
                  xy=(unloaded_displacement, unloaded_fb),
-                 xytext=(5,-10),
+                 xytext=(5,-20),
                  textcoords=('offset pixels'),
                  ha='left', va='top', arrowprops={'arrowstyle':'-|>', 'lw':1,
                                                   'fc':'black'},
                  bbox={'fc':'gray', 'alpha':0.3,'ec':'None', 'pad':2})
 
-    plt.text(x=0.03, y=0.83,
+    plt.text(x=0.03, y=0.78,
              s=('Net Displacement: {:,} tons\n'.format(net_displacement)+
                 f'Material: {material}'), va='top',
-             transform=ax.transAxes,
-             fontsize=8)
+             transform=ax.transAxes)
 
     plt.legend()
 
-    plt.savefig('./templates/result.svg')
+    f = io.StringIO()
+    plt.savefig(f, format = "svg")
+    script = f.getvalue()
+    #plt.show()
+    return re.findall('<svg.*</svg>' , script, re.DOTALL)[0]
 
 if __name__ =='__main__':
     plot_barge(barge='ING 1959', loaded_fb=2.0, unloaded_fb=10, material='Bedding Stone')

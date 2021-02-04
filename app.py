@@ -59,12 +59,12 @@ def index():
 
     app.vars['barge_name'] = request.form['barge_name']
 
-    plot_barge(barge=app.vars['barge_name'],
-               loaded_fb=app.vars['loaded_fb'],
-               unloaded_fb=app.vars['unloaded_fb'],
-               material=app.vars['material'])
+    plot = plot_barge(barge=app.vars['barge_name'],
+                       loaded_fb=app.vars['loaded_fb'],
+                       unloaded_fb=app.vars['unloaded_fb'],
+                       material=app.vars['material'])
 
-    return render_template('result.svg')
+    return render_template('result.html', plot=plot)
 
 # @app.route('/about')
 # def about():
@@ -73,3 +73,4 @@ def index():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
+    #app.run(debug=True)
